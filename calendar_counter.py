@@ -31,6 +31,23 @@ def is_valid_date(date):
 def calculate():
     dates = request_input()
 
+    start_month = int(dates[0][0])
+    start_day = int(dates[0][1])
+    end_month = int(dates[1][0])
+    end_day = int(dates[1][1])
+
+    total_days = 0
+    if(start_month == end_month):
+        total_days = end_day - start_day
+    else:
+        total_days += DAYS_IN_MONTH[start_month - 1] - start_day
+        for month in range(start_month + 1, end_month):
+            total_days += DAYS_IN_MONTH[month - 1]
+        total_days += end_day
+    
+    weeks = total_days / 7
+    print(f'{total_days} days')
+    print(f'{weeks} weeks')
 
 def main():
     calculate()
