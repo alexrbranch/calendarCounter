@@ -3,4 +3,5 @@ A little script to return the number of days and weeks between a specified date 
 I got tired of looking at a calendar to count the number of weeks I would be available for
 internships.
 
-Input your start date and end date (as prompted) in MM/DD/YYYY format and I will do the rest.
+Input your start date and end date (as prompted) in MM/DD [/YYYY] format and I will do the rest.
+If you do not input a year, assume current year.
