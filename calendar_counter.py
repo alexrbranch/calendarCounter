@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
+from math import floor
 
 def get_date(date_num):
     date_num_str = "first" if date_num == 0 else "second"
@@ -27,9 +28,10 @@ def calculate():
 
     delta_days = dates[1] - dates[0]
     total_days = abs(delta_days.days)
-    weeks = "{:.1f}".format(abs(total_days / 7)) # formats float to have 1 decimal
+    weeks = abs(total_days / 7)
+    extra_days_week = total_days - (floor(weeks) * 7)
     print(f'{total_days} days')
-    print(f'{weeks} weeks')
+    print(f'{floor(weeks)} weeks and {extra_days_week} days')
 
 def main():
     calculate()
