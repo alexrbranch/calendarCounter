@@ -27,7 +27,7 @@ def calculate():
 
     delta_days = dates[1] - dates[0]
     total_days = abs(delta_days.days)
-    weeks = abs(total_days / 7)
+    weeks = "{:.1f}".format(abs(total_days / 7)) # formats float to have 1 decimal
     print(f'{total_days} days')
     print(f'{weeks} weeks')
 
